@@ -1,0 +1,11 @@
+.party-image {
+    width: 40px;
+    border-radius: 4px;
+}
+
+.vote-button {
+    height: 50px;
+    min-width: 100px;
+    margin: 20px;
+    border-radius: 2px;
+}

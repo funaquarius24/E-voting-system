@@ -1,0 +1,18 @@
+npm install -g truffle
+npm install -g react
+
+
+cd adminApp
+cd ../
+npm install
+
+cd adminApp
+npm install
+
+cd ../
+cd app
+npm install
+
+cd ../
+cd server
+npm install

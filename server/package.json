@@ -1,0 +1,69 @@
+{
+  "name": "express-es6-sample",
+  "version": "0.2.0",
+  "private": true,
+  "author": {
+    "name": "Jonathan Cunanan",
+    "url": "https://github.com/jcunanan05"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@drizzle/react-components": "^1.5.1",
+    "@drizzle/react-plugin": "^1.5.1",
+    "@drizzle/store": "^1.5.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "jade": "^1.11.0",
+    "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.1",
+    "web3": "^1.2.8"
+  },
+  "devDependencies": {
+    "babel-plugin-inline-json-import": "^0.3.2",
+    "jest": "^25.1.0"
+  },
+  "nodemonConfig": {
+    "exec": "npm run dev",
+    "watch": [
+      "server/*",
+      "public/*"
+    ],
+    "ignore": [
+      "**/__tests__/**",
+      "*.test.js",
+      "*.spec.js"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      [
+        "inline-json-import",
+        {}
+      ]
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "start": "npm run prod",
+    "build": "npm-run-all clean transpile",
+    "server": "node ./dist-server/bin/www",
+    "dev": "set NODE_ENV=development & npm-run-all build server",
+    "prod": "set NODE_ENV=production & npm-run-all build server",
+    "transpile": "babel ./server --out-dir dist-server --source-maps inline --copy-files",
+    "clean": "rimraf dist-server",
+    "watch:dev": "nodemon -e js,pug,mjs,json,jade,html,css ",
+    "test": "jest"
+  }
+}

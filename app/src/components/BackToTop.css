@@ -1,0 +1,8 @@
+.self-align {
+    align-self: flex-end;
+    margin-left: 20px;
+}
+
+.search {
+    float: right;
+}

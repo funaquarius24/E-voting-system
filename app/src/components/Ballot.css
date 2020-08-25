@@ -1,0 +1,23 @@
+.first-block {
+    display: flex;
+    align-content: flex-start;
+    text-align: left;
+    padding-top: 30px;
+}
+
+.coat-of-arms {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+hr {
+    border: 2em;
+    width: 100%;
+}
+
+.info-text {
+    width: 100%;
+    text-align: center;
+    color: green;
+}
